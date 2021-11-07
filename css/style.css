@@ -1,0 +1,29 @@
+.go-center{
+    margin: auto 0;
+}
+
+.fsuu-bg{
+    background-color: rgb(44, 29, 110);
+    border-color: rgb(44, 29, 110);
+}
+.navbar-default {
+    background-color: rgb(44, 29, 110);
+    border-color: rgb(44, 29, 110);
+}
+
+.icon-white{
+    color: white;
+}
+
+.icon-dark{
+    color:black;
+}
+
+.icon-dark:hover{
+    color:white;
+}
+
+.notif-btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
