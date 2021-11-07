@@ -18,4 +18,15 @@ $(document).ready(function(){
         $('#myInput').trigger('focus')
     });
 
+    $("#showApplicationForm").click(function() {
+        $("#ApplicationForm").toggle();
+    });
+
+    $("#showGraduateClearance").click(function() {
+        $("#GraduateClearance").toggle();
+    });
+
 });
+
+
+  
