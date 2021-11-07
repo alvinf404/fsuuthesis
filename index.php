@@ -11,13 +11,15 @@
     <div class = "graduation">
         <form class="form-horizontal" role="form">
             <h2>Registration</h2>
-            <p class="topText">Dear Madam: </br> I would like to apply for graduation with the degree of</p>
+            <p class="topText">Dear Madam: </br> </br> I would like to apply for graduation with the degree of</p>
             <div class="form-group degree">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Bachelor of Science of Arts</option>
+                    <option>Bachelor of Science in Accountancy</option>
+                    <option>Bachelor of Science in Elementary Education</option>
+                    <option>Bachelor of Science in Secondary Education</option>
+                    <option>Bachelor of Science in Business Administration</option>
+                    <option>Bachelor of Science in Business AAAAAAAAAAAAAAAAAAdministration</option>
                 </select>
             </div>
 
@@ -29,7 +31,20 @@
                     <input type="text" id="major" placeholder="Major/Specialization" class="form-control" name= "email">
                 </div>
             </div>
-            <p class="topText">at the end of the (SCHOOL YEAR AND ACADEMIC YEAR DYNAMIC?)</p>
+            <p class="topText">at the end of the </p>
+            <div class="form-group degree">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1st</option>
+                    <option>2nd</option>
+                </select>
+            </div>
+            <p class="topText">Semester of the Academic Year</p>
+            <div class="form-group degree">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>2019-2020</option>
+                    <option>2020-2021</option>
+                </select>
+            </div>
 
             </br>
             </br>
@@ -183,6 +198,22 @@
                         </div>
                     </fieldset>
                 </fieldset>
+                <p class="topText">I understand that this application is for my scholastic evaluation purposes.</p>
+                <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="signature">signature</label>
+                                </br></br>
+                                <p>______________________________</p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Baranggay">Student Number</label>
+                                <input type="text" class="form-control" id="" placeholder="Student Number">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Baranggay">Date Applied</label>
+                                <input type="text" class="form-control" id="" placeholder="Date Applied">
+                            </div>
+                        </div>
             </div>
             
                 
