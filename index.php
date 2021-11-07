@@ -6,219 +6,195 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
     <div class = "graduation">
-        <form class="form-horizontal" role="form">
-            <h2>Registration</h2>
-            <p class="topText">Dear Madam: </br> </br> I would like to apply for graduation with the degree of</p>
-            <div class="form-group degree">
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Bachelor of Science of Arts</option>
-                    <option>Bachelor of Science in Accountancy</option>
-                    <option>Bachelor of Science in Elementary Education</option>
-                    <option>Bachelor of Science in Secondary Education</option>
-                    <option>Bachelor of Science in Business Administration</option>
-                    <option>Bachelor of Science in Business AAAAAAAAAAAAAAAAAAdministration</option>
-                </select>
-            </div>
-
-            </br>
-
-            <p class="topText">Major / Specialization</p>
-            <div class="form-group degree">
-                <div class="col-sm-12">
-                    <input type="text" id="major" placeholder="Major/Specialization" class="form-control" name= "email">
+        <form class="form-horizontal" role="form" style="border:1px solid;">
+            <h5>Cleared by:</h5>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <center><?php 
+                            if ($value['is_cooperative_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                        <i class="fa fa-check" style="margin-top:10px"></i>
+                        <p>________________________<br />
+                            <small>Admission & Scholarship Office</small>
+                        </p>
+                    </center>
                 </div>
+                    <div class="col-md-4">
+                        <center>
+                        <i class="fa fa-check" style="margin-top:10px"></i>
+                            <?php 
+                            if ($value['is_cooperative_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>CES Office</small>
+                            </p>
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                        <i class="fa fa-check" style="margin-top:10px"></i>
+                            <?php 
+                            if ($value['is_executive_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>Guidance Office</small>
+                            </p>
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <?php 
+                            if ($value['is_supply_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>Office of the Religous Affairs</small>
+                            </p>
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <?php 
+                            if ($value['is_librarian_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>DSSA Office</small>
+                            </p>
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <?php 
+                            if ($value['is_hrm_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>VERITAS</small>
+                            </p>
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <?php 
+                            if ($value['is_director_ppf_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>DAO</small>
+                            </p>
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <?php 
+                            if ($value['is_registrar_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>Cashier</small>
+                            </p>
+                        </center>
+                    </div>
+                    
+                    
+                    <div class="col-md-12">
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </div>
+
+                    <div class="col-md-4">
+                    <h6 style="margin-left:50px">Recommended By:</h6>
+                        <center>
+                            <?php 
+                            if ($value['is_registrar_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>Program Dean</small>
+                            </p>
+                        </center>
+                    </div>
+
+                    <div class="col-md-4">
+                    <h6 style="margin-left:50px">Evaluated By</h6>
+                        <center>
+                            <?php 
+                            if ($value['is_registrar_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>Records-in-Charge</small>
+                            </p>
+                        </center>
+                    </div>
+
+                    <div class="col-md-4">
+                    <h6 style="margin-left:50px">Approved By:</h6>
+                        <center>
+                            <?php 
+                            if ($value['is_registrar_approval'] == 0){
+                                echo '';
+                            }else{
+                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                            }
+                            ?>
+                            <br />
+                            <p>________________________<br />
+                                <small>Maria Lourdes G. Naquita, LTP</small>
+                                <br>
+                                <small>University Registrar</small>
+                            </p>
+                        </center>
+                    </div>
             </div>
-            <p class="topText">at the end of the </p>
-            <div class="form-group degree">
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1st</option>
-                    <option>2nd</option>
-                </select>
-            </div>
-            <p class="topText">Semester of the Academic Year</p>
-            <div class="form-group degree">
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>2019-2020</option>
-                    <option>2020-2021</option>
-                </select>
-            </div>
-
-            </br>
-            </br>
-
-            <p class="topText">The following is my curriculum vitae pertinent to my graduation</p>
-            
-            <fieldset class="fsborder">
-                <legend class="legendborder">Personal Profile</legend>
-                <div class="form-group">
-                <label for="firstName" class="control-label">Name</label>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="Family Name">Family Name</label>
-                        <input type="text" class="form-control" id="" placeholder="PSA/NSO Birth Family Name">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="Given Name">Given Name</label>
-                        <input type="text" class="form-control" id="" placeholder="Given Name">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="Middle Name">Middle Name</label>
-                        <input type="text" class="form-control" id="" placeholder="Middle Name">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="Date of Birth">Date of Birth</label>
-                        <input type="text" class="form-control" id="" placeholder="Date of Birth">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="Place of Birth">Place of Birth</label>
-                        <input type="text" class="form-control" id="" placeholder="Place of Birth">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="Citizenship">Citizenship</label>
-                        <input type="text" class="form-control" id="" placeholder="Citizenship">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="Religion">Religion</label>
-                        <input type="text" class="form-control" id="" placeholder="Religion">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="Contact">Contact no.</label>
-                        <input type="text" class="form-control" id="" placeholder="Contact Number">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="Email">Email</label>
-                        <input type="text" class="form-control" id="" placeholder="Email">
-                    </div>
-                </div>
-
-                <label for="address" class="control-label">Address</label>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="Street">Street</label>
-                        <input type="text" class="form-control" id="" placeholder="Street">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="Baranggay">Baranggay</label>
-                        <input type="text" class="form-control" id="" placeholder="Baranggay">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="City/Municipality">City / Municipality</label>
-                        <input type="text" class="form-control" id="" placeholder="City / Municipality">
-                    </div>
-                </div>
-
-            </fieldset>
-            
-            <fieldset class="fsborder">
-                <legend class="legendborder">Parents / Guardian</legend>
-                    <fieldset class="fsborder">
-                        <legend class="legendborder">Father</legend>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label for="FamilyName">Family Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Family Name">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="Baranggay">Given Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Given Name">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="City/Municipality">Middle Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Middle Name">
-                                </div>
-                            </div>
-                    </fieldset>
-                    <fieldset class="fsborder">
-                        <legend class="legendborder">Mother</legend>
-                            <div class="form-row">
-                               <div class="form-group col-md-4">
-                                    <label for="FamilyName">Family Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Family Name">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="Baranggay">Given Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Given Name">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="City/Municipality">Middle Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Middle Name">
-                                </div>
-                            </div>
-                    </fieldset>
-                    <label for="address" class="control-label">Address</label>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="Street">Street</label>
-                            <input type="text" class="form-control" id="" placeholder="Street">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="Baranggay">Baranggay</label>
-                            <input type="text" class="form-control" id="" placeholder="Baranggay">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="City/Municipality">City / Municipality</label>
-                            <input type="text" class="form-control" id="" placeholder="City / Municipality">
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset class="fsborder">
-                    <legend class="legendborder">Education</legend>
-                    <fieldset class="fsborder">
-                        <legend class="legendborder">Elementary</legend>
-                        <div class="form-row">
-                            <div class="form-group col-md-9">
-                                <label for="Street">School Name</label>
-                                <input type="text" class="form-control" id="" placeholder="School Name">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="Baranggay">Year Graduated</label>
-                                <input type="text" class="form-control" id="" placeholder="Year Graduated">
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset class="fsborder">
-                        <legend class="legendborder">High School</legend>
-                        <div class="form-row">
-                            <div class="form-group col-md-9">
-                                <label for="Street">School Name</label>
-                                <input type="text" class="form-control" id="" placeholder="School Name">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="Baranggay">Year Graduated</label>
-                                <input type="text" class="form-control" id="" placeholder="Year Graduated">
-                            </div>
-                        </div>
-                    </fieldset>
-                </fieldset>
-                <p class="topText">I understand that this application is for my scholastic evaluation purposes.</p>
-                <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="signature">signature</label>
-                                </br></br>
-                                <p>______________________________</p>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="Baranggay">Student Number</label>
-                                <input type="text" class="form-control" id="" placeholder="Student Number">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="Baranggay">Date Applied</label>
-                                <input type="text" class="form-control" id="" placeholder="Date Applied">
-                            </div>
-                        </div>
-            </div>
-            
-                
-            
-
         </form> <!-- /form -->
     </div>
     
