@@ -1,5 +1,5 @@
 <?php
-    
+    require_once('php/dbcon.php');
 
 ?>
 
@@ -105,7 +105,7 @@
             <p class="topText">Major / Specialization</p>
             <div class="form-group degree">
                 <div class="col-sm-12">
-                    <input type="text" id="major" placeholder="Major/Specialization" class="form-control" name= "email">
+                    <input type="text" id="major" placeholder="Major/Specialization" class="form-control">
                 </div>
             </div>
             <p class="topText">at the end of the </p>
@@ -135,44 +135,44 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="Family Name">Family Name</label>
-                        <input type="text" class="form-control" id="" placeholder="PSA/NSO Birth Family Name">
+                        <input type="text" class="form-control" id="graduteFamilyName" placeholder="PSA/NSO Birth Family Name">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Given Name">Given Name</label>
-                        <input type="text" class="form-control" id="" placeholder="Given Name">
+                        <input type="text" class="form-control" id="graduteGivenName" placeholder="Given Name">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Middle Name">Middle Name</label>
-                        <input type="text" class="form-control" id="" placeholder="Middle Name">
+                        <input type="text" class="form-control" id="graduateMiddleName" placeholder="Middle Name">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="Date of Birth">Date of Birth</label>
-                        <input type="text" class="form-control" id="" placeholder="Date of Birth">
+                        <input type="text" class="form-control" id="DateOfBirth" placeholder="Date of Birth">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Place of Birth">Place of Birth</label>
-                        <input type="text" class="form-control" id="" placeholder="Place of Birth">
+                        <input type="text" class="form-control" id="PlaceOfBirth" placeholder="Place of Birth">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Citizenship">Citizenship</label>
-                        <input type="text" class="form-control" id="" placeholder="Citizenship">
+                        <input type="text" class="form-control" id="Citizenship" placeholder="Citizenship">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="Religion">Religion</label>
-                        <input type="text" class="form-control" id="" placeholder="Religion">
+                        <input type="text" class="form-control" id="Religion" placeholder="Religion">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Contact">Contact no.</label>
-                        <input type="text" class="form-control" id="" placeholder="Contact Number">
+                        <input type="text" class="form-control" id="Contact" placeholder="Contact Number">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Email">Email</label>
-                        <input type="text" class="form-control" id="" placeholder="Email">
+                        <input type="text" class="form-control" id="Email" placeholder="Email">
                     </div>
                 </div>
 
@@ -180,15 +180,15 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="Street">Street</label>
-                        <input type="text" class="form-control" id="" placeholder="Street">
+                        <input type="text" class="form-control" id="graduateStreet" placeholder="Street">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Baranggay">Baranggay</label>
-                        <input type="text" class="form-control" id="" placeholder="Baranggay">
+                        <input type="text" class="form-control" id="graduateBaranggay" placeholder="Baranggay">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="City/Municipality">City / Municipality</label>
-                        <input type="text" class="form-control" id="" placeholder="City / Municipality">
+                        <input type="text" class="form-control" id="graduteCity" placeholder="City / Municipality">
                     </div>
                 </div>
 
@@ -201,15 +201,15 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="FamilyName">Family Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Family Name">
+                                    <input type="text" class="form-control" id="fatherFamilyName" placeholder="Family Name">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="Baranggay">Given Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Given Name">
+                                    <input type="text" class="form-control" id="fatherGivenName" placeholder="Given Name">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="City/Municipality">Middle Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Middle Name">
+                                    <input type="text" class="form-control" id="fatherMiddleName" placeholder="Middle Name">
                                 </div>
                             </div>
                     </fieldset>
@@ -218,15 +218,15 @@
                             <div class="form-row">
                                <div class="form-group col-md-4">
                                     <label for="FamilyName">Family Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Family Name">
+                                    <input type="text" class="form-control" id="motherFamilyName" placeholder="Family Name">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="Baranggay">Given Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Given Name">
+                                    <input type="text" class="form-control" id="motherGivenName" placeholder="Given Name">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="City/Municipality">Middle Name</label>
-                                    <input type="text" class="form-control" id="" placeholder="Middle Name">
+                                    <input type="text" class="form-control" id="motherMiddleName" placeholder="Middle Name">
                                 </div>
                             </div>
                     </fieldset>
@@ -234,15 +234,15 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="Street">Street</label>
-                            <input type="text" class="form-control" id="" placeholder="Street">
+                            <input type="text" class="form-control" id="parentStreet" placeholder="Street">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="Baranggay">Baranggay</label>
-                            <input type="text" class="form-control" id="" placeholder="Baranggay">
+                            <input type="text" class="form-control" id="parentBaranggay" placeholder="Baranggay">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="City/Municipality">City / Municipality</label>
-                            <input type="text" class="form-control" id="" placeholder="City / Municipality">
+                            <input type="text" class="form-control" id="parentCity" placeholder="City / Municipality">
                         </div>
                     </div>
                 </fieldset>
@@ -253,11 +253,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-9">
                                 <label for="Street">School Name</label>
-                                <input type="text" class="form-control" id="" placeholder="School Name">
+                                <input type="text" class="form-control" id="elementaryName" placeholder="School Name">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="Baranggay">Year Graduated</label>
-                                <input type="text" class="form-control" id="" placeholder="Year Graduated">
+                                <input type="text" class="form-control" id="elementaryYear" placeholder="Year Graduated">
                             </div>
                         </div>
                     </fieldset>
@@ -266,11 +266,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-9">
                                 <label for="Street">School Name</label>
-                                <input type="text" class="form-control" id="" placeholder="School Name">
+                                <input type="text" class="form-control" id="highschoolName" placeholder="School Name">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="Baranggay">Year Graduated</label>
-                                <input type="text" class="form-control" id="" placeholder="Year Graduated">
+                                <input type="text" class="form-control" id="highschoolYear" placeholder="Year Graduated">
                             </div>
                         </div>
                     </fieldset>
@@ -284,15 +284,15 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="Baranggay">Student Number</label>
-                                <input type="text" class="form-control" id="" placeholder="Student Number">
+                                <input type="text" class="form-control" id="graduateID" placeholder="Student Number">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="Baranggay">Date Applied</label>
-                                <input type="text" class="form-control" id="" placeholder="Date Applied">
+                                <input type="text" class="form-control" id="DateApplied" placeholder="Date Applied">
                             </div>
                         </div>
             </div>
-            
+            <button type="submit" class="btn btn-primary" id="SubmitGraduateForm">Submit</button>
         </form> <!-- /form -->
 
         <div class = "graduation">
