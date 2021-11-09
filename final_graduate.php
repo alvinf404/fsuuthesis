@@ -297,32 +297,44 @@ require_once('php/dbcon.php');
         <button  class="btn btn-primary" id="SubmitGraduateForm">Submit</button>
 
         <div class = "graduation">
-        <form id= "GraduateClearance"class="form-horizontal" role="form" style="border:1px solid;">
+
+        <?php
+
+        $email = 'a'; //EMAIL OR ID KANANG MA SAVE SA SESSION
+        // $userid = $_SESSION['id'];
+
+        $sql = "SELECT * FROM tbl_profile a, tbl_student_clearance b, tbl_clearance_status c WHERE b.id = c.id AND a.email = c.email AND a.email = '$email';";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        $fetch = $query->fetchAll();
+
+        foreach ($fetch as $key => $value) { ?>
+            <form id= "GraduateClearance"class="form-horizontal" role="form" style="border:1px solid;">
             <h5>Cleared by:</h5>
             <br>
             <div class="row">
-                <div class="col-md-4">
-                    <center><?php 
-                            if ($value['is_cooperative_approval'] == 0){
+            <div class="col-md-4">
+                        <center>
+                            <?php 
+                            if ($value['a_and_s_office'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
-                        <i class="fa fa-check" style="margin-top:10px"></i>
-                        <p>________________________<br />
-                            <small>Admission & Scholarship Office</small>
-                        </p>
-                    </center>
-                </div>
+                            <br />
+                            <p>________________________<br />
+                                <small>Admission and Scholar Office</small>
+                            </p>
+                        </center>
+                    </div>
                     <div class="col-md-4">
                         <center>
-                        <i class="fa fa-check" style="margin-top:10px"></i>
                             <?php 
-                            if ($value['is_cooperative_approval'] == 0){
+                            if ($value['ces_office'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -333,12 +345,11 @@ require_once('php/dbcon.php');
                     </div>
                     <div class="col-md-4">
                         <center>
-                        <i class="fa fa-check" style="margin-top:10px"></i>
                             <?php 
-                            if ($value['is_executive_approval'] == 0){
+                            if ($value['guidance_office'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -350,10 +361,10 @@ require_once('php/dbcon.php');
                     <div class="col-md-4">
                         <center>
                             <?php 
-                            if ($value['is_supply_approval'] == 0){
+                            if ($value['religious_affairs_office'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -365,10 +376,10 @@ require_once('php/dbcon.php');
                     <div class="col-md-4">
                         <center>
                             <?php 
-                            if ($value['is_librarian_approval'] == 0){
+                            if ($value['dssa_office'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -380,10 +391,10 @@ require_once('php/dbcon.php');
                     <div class="col-md-4">
                         <center>
                             <?php 
-                            if ($value['is_hrm_approval'] == 0){
+                            if ($value['veritas'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -395,10 +406,10 @@ require_once('php/dbcon.php');
                     <div class="col-md-4">
                         <center>
                             <?php 
-                            if ($value['is_director_ppf_approval'] == 0){
+                            if ($value['dao'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -410,10 +421,10 @@ require_once('php/dbcon.php');
                     <div class="col-md-4">
                         <center>
                             <?php 
-                            if ($value['is_registrar_approval'] == 0){
+                            if ($value['cashier'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -432,10 +443,10 @@ require_once('php/dbcon.php');
                     <h6 style="margin-left:50px">Recommended By:</h6>
                         <center>
                             <?php 
-                            if ($value['is_registrar_approval'] == 0){
+                            if ($value['program_dean'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -446,13 +457,13 @@ require_once('php/dbcon.php');
                     </div>
 
                     <div class="col-md-4">
-                    <h6 style="margin-left:50px">Evaluated By</h6>
+                    <h6 style="margin-left:50px">record_incharge By</h6>
                         <center>
                             <?php 
                             if ($value['is_registrar_approval'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -466,10 +477,10 @@ require_once('php/dbcon.php');
                     <h6 style="margin-left:50px">Approved By:</h6>
                         <center>
                             <?php 
-                            if ($value['is_registrar_approval'] == 0){
+                            if ($value['registrar'] == 0){
                                 echo '';
                             }else{
-                                echo '<i class="glyphicon glyphicon-ok"></i>';
+                                echo '<i class="fa fa-check" style="margin-top:10px"></i>';
                             }
                             ?>
                             <br />
@@ -482,6 +493,9 @@ require_once('php/dbcon.php');
                     </div>
             </div>
         </form> <!-- /form -->
+
+        <?php } ?>
+        
     </div>
     
 
