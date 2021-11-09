@@ -132,7 +132,7 @@ require_once('php/dbcon.php');
 									<td><?php echo $value['email'] ?></td>
 									<td><?php echo $value['contact']?></td>
 									<td><?php echo $value['degree']?></td>
-									<td><?php echo $value['cle']?></td>	
+									<td><?php echo $value['clearance_status']?></td>	
                                    
                                 </tr>
                                 <?php } ?>

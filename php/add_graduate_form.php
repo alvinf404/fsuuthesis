@@ -15,6 +15,10 @@
         $Email = $_POST['data']['Email'];
         $graduateID = $_POST['data']['graduateID'];
         $DateApplied = $_POST['data']['DateApplied'];
+        $Degree = $_POST['data']['Degree'];
+        $Major = $_POST['data']['Major'];
+        $Semester = $_POST['data']['Semester'];
+        $AcademicYear = $_POST['data']['AcademicYear'];
 
         echo json_encode($graduateFamilyName);
         echo json_encode($graduateGivenName);
@@ -41,7 +45,11 @@
                                                             contact,
                                                             email,
                                                             student_number,
-                                                            date_applied) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                                                            date_applied,
+                                                            degree,
+                                                            major,
+                                                            semester,
+                                                            academic_year) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
            
             $prepared_statement->execute(array($graduateFamilyName,
                                                 $graduateGivenName,
@@ -53,12 +61,16 @@
                                                 $Contact,
                                                 $Email,
                                                 $graduateID,
-                                                $DateApplied));
+                                                $DateApplied,
+                                                $Degree,
+                                                $Major,
+                                                $Semester,
+                                                $AcademicYear));
             echo $pdo->lastInsertId();
             $pdo->commit();
 
         }catch (Exception $e){
-            echo "an error has occured";
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
         
     }
@@ -92,7 +104,7 @@
             $pdo->commit();
 
         }catch (Exception $e){
-            echo "an error has occured";
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
         
     }
@@ -245,6 +257,34 @@
            
             $prepared_statement->execute(array($highschoolName,
                                                 $highschoolYear,
+                                                $Email));
+            echo $pdo->lastInsertId();
+            $pdo->commit();
+
+        }catch (Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+        
+    }
+
+    if($_POST['action'] == 'add_graduate_clearance_request'){
+        
+        $Email = $_POST['data']['Email'];
+        $clearance_type = $_POST['data']['clearance_type'];
+        $clearance_status = $_POST['data']['clearance_status'];
+        
+        echo json_encode($Email);
+        echo json_encode($clearance_type);
+        echo json_encode($clearance_status);
+
+        try{
+            $pdo->beginTransaction();
+            $prepared_statement = $pdo->prepare("INSERT INTO tbl_clearance_status (clearance_type,
+                                                            clearance_status,
+                                                            email) VALUES (?,?,?)");
+           
+            $prepared_statement->execute(array($clearance_type,
+                                                $clearance_status,
                                                 $Email));
             echo $pdo->lastInsertId();
             $pdo->commit();
