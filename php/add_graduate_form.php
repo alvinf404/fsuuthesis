@@ -286,8 +286,19 @@
             $prepared_statement->execute(array($clearance_type,
                                                 $clearance_status,
                                                 $Email));
-            echo $pdo->lastInsertId();
+            $clearance_ID = $pdo->lastInsertId();
             $pdo->commit();
+
+            try{
+                $pdo->beginTransaction();
+                $prepared_statement = $pdo->prepare("INSERT INTO tbl_student_clearance (id) VALUES (?)");
+                $prepared_statement->execute(array($clearance_ID));
+                $pdo->commit();
+                
+            }catch (Exception $e){
+                echo 'Caught exception: ',  $e->getMessage(), "\n";
+            }
+            
 
         }catch (Exception $e){
             echo 'Caught exception: ',  $e->getMessage(), "\n";

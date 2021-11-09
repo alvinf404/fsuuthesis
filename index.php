@@ -1,5 +1,5 @@
 <?php
-require_once('php/dbcon.php');
+include('php/dbcon.php');
 ?>
 
 <!DOCTYPE html>
@@ -117,22 +117,26 @@ require_once('php/dbcon.php');
                                 
 
 								<?php
-                                    $sql = "SELECT * FROM tbl_profile NATURAL JOIN tbl_clearance_status";
+                                    include('php/dbcon.php');
+                                    $sql = "SELECT * FROM tbl_profile a, tbl_student_clearance b, tbl_clearance_status c WHERE b.id = c.id;";
                                     $query = $conn->prepare($sql);
                                     $query->execute();
                                     $fetch = $query->fetchAll();
-
 								    foreach ($fetch as $key => $value) { 
                                 ?>
 
                                 <tr>
+
                                     <td class="hidden"><?php echo $value['id'] ?></td>
 									<td><?php echo $value['student_number'];?></td>
-									<td><?php echo $value['family_name'], '&nbsp;', $value['middle_name'], '&nbsp;', $value['family_name']?></td>
+									<td><?php echo $value['given_name'], '&nbsp;', $value['middle_name'], '&nbsp;', $value['family_name']?></td>
 									<td><?php echo $value['email'] ?></td>
 									<td><?php echo $value['contact']?></td>
 									<td><?php echo $value['degree']?></td>
-									<td><?php echo $value['cle']?></td>	
+									<td><?php echo $value['major']?></td>
+                                    <td><?php echo $value['academic_year']?></td>
+                                    <td><?php echo $value['ces_office']?></td>
+                                    
                                    
                                 </tr>
                                 <?php } ?>
