@@ -251,7 +251,7 @@
 
         try{
             $pdo->beginTransaction();
-            $prepared_statement = $pdo->prepare("INSERT INTO tbl_elementary (school_name,
+            $prepared_statement = $pdo->prepare("INSERT INTO tbl_highschool (school_name,
                                                             year_graduated,
                                                             profile_email) VALUES (?,?,?)");
            

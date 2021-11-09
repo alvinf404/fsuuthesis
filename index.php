@@ -118,7 +118,7 @@ include('php/dbcon.php');
 
 								<?php
                                     include('php/dbcon.php');
-                                    $sql = "SELECT * FROM tbl_profile a, tbl_student_clearance b, tbl_clearance_status c WHERE b.id = c.id;";
+                                    $sql = "SELECT * FROM tbl_profile a, tbl_student_clearance b, tbl_clearance_status c WHERE b.id = c.id AND a.email = c.email;";
                                     $query = $conn->prepare($sql);
                                     $query->execute();
                                     $fetch = $query->fetchAll();
@@ -135,7 +135,40 @@ include('php/dbcon.php');
 									<td><?php echo $value['degree']?></td>
 									<td><?php echo $value['major']?></td>
                                     <td><?php echo $value['academic_year']?></td>
-                                    <td><?php echo $value['ces_office']?></td>
+                                    <td>
+                                       <form action="php/update_clearance.php" method="POST">
+                                           <input type="hidden" value = "<?php echo $value['id'] ?>" class="form-control" name="id" placeholder="graduate_clearance_id">
+                                           <?php
+                                           $userID = '1';
+                                           //$user_id = $_SESSION['id'];
+                                           if($userID == 1){
+                                            if ($value['cashier'] == 0){
+                                                echo'
+                                                <div class="form-group">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="">
+                                                            <label>
+                                                                <input type="submit" class="hidden" />
+                                                                <input type="checkbox" class="js-switch" /> Unapproved
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>';
+                                            }else{
+                                                echo '<div class="form-group">
+                                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                                    <div class="">
+                                                        <label>
+                                                            <input type="checkbox" class="js-switch" checked disabled/> &nbsp;Approved
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>';}
+                                           }
+                                           
+                                           ?>
+                                       </form> 
+                                    </td>
                                     
                                    
                                 </tr>
