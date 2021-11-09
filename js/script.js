@@ -79,7 +79,9 @@ $(document).ready(function(){
             dataType : "html",
             success : function(EmailExisting){
                 $IfEmailExist = jQuery.parseJSON(EmailExisting); //SAVE RETURN
-                if(!$.trim($IfEmailExist)){ //CHECK RETURN IF NOT EMPTY
+                if(!$.trim($IfEmailExist)){ //CHECK RETURN IF CANNOT BE TRIMMED
+                    
+        /** -----------START SEND FORM----------------- */            
                     const graduate_data = {
                         graduateFamilyName : graduateFamilyName,
                         graduateGivenName : graduateGivenName,
@@ -239,8 +241,9 @@ $(document).ready(function(){
                             
                         }
                     });
+                    /** -----------END SEND FORM----------------- */ 
                 }else{
-                    console.log('NOT OK');
+                    console.log('EMAIL ALREADY EXIST');
                 }
             }
 
