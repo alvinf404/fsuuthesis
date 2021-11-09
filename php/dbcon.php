@@ -34,6 +34,6 @@
 		}
 	catch(PDOException $e)
 		{
-		// echo "Connection failed: " . $e->get/Message();
+		 echo "Connection failed: " . $e->get/Message();
 		}
 ?>
