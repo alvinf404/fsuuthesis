@@ -1,6 +1,5 @@
 <?php
-    require_once('php/dbcon.php');
-
+require_once('php/dbcon.php');
 ?>
 
 <!DOCTYPE html>
@@ -135,11 +134,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="Family Name">Family Name</label>
-                        <input type="text" class="form-control" id="graduteFamilyName" placeholder="PSA/NSO Birth Family Name">
+                        <input type="text" class="form-control" id="graduateFamilyName" placeholder="PSA/NSO Birth Family Name">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Given Name">Given Name</label>
-                        <input type="text" class="form-control" id="graduteGivenName" placeholder="Given Name">
+                        <input type="text" class="form-control" id="graduateGivenName" placeholder="Given Name">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Middle Name">Middle Name</label>
@@ -184,11 +183,11 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="Baranggay">Baranggay</label>
-                        <input type="text" class="form-control" id="graduateBaranggay" placeholder="Baranggay">
+                        <input type="text" class="form-control" id="graduateBarangay" placeholder="Baranggay">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="City/Municipality">City / Municipality</label>
-                        <input type="text" class="form-control" id="graduteCity" placeholder="City / Municipality">
+                        <input type="text" class="form-control" id="graduateCity" placeholder="City / Municipality">
                     </div>
                 </div>
 
@@ -292,8 +291,9 @@
                             </div>
                         </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="SubmitGraduateForm">Submit</button>
+            
         </form> <!-- /form -->
+        <button  class="btn btn-primary" id="SubmitGraduateForm">Submit</button>
 
         <div class = "graduation">
         <form id= "GraduateClearance"class="form-horizontal" role="form" style="border:1px solid;">
@@ -484,8 +484,7 @@
     </div>
     
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </body>
